@@ -1,0 +1,154 @@
+GET /stack.html HTTP/1.1   // Request Line
+Host: localhost:8080
+Connection: keep-alive
+Cache-Control: max-age=0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.75 Safari/537.36
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: ko-KR,ko;q=0.8,en-US;q=0.6,en;q=0.4
+Cookie: s_nr=1461824431611; s_cc=true; gpw_e24=no%20value; s_sq=%5B%5BB%5D%5D
+
+HTTP/1.1 200 OK
+Content-Length: 1422622
+Connection: close
+Content-Type: text/html
+
+
+
+GET /stylesheet.css HTTP/1.1
+Host: localhost:8080
+Connection: keep-alive
+Cache-Control: max-age=0
+Accept: text/css,*/*;q=0.1
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.75 Safari/537.36
+Referer: http://localhost:8080/stack.html
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: ko-KR,ko;q=0.8,en-US;q=0.6,en;q=0.4
+Cookie: s_nr=1461824431611; s_cc=true; gpw_e24=no%20value; s_sq=%5B%5BB%5D%5D
+
+
+HTTP/1.1 200 OK
+Content-Length: 11611 //내가 구해서 넣는 부분
+Connection: close
+Content-Type: text/css // utils 에서 찾으면됨
+
+
+GET /resources/background.gif HTTP/1.1
+Host: localhost:8080
+Connection: keep-alive
+Cache-Control: max-age=0
+Accept: image/webp,image/*,*/*;q=0.8
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.75 Safari/537.36
+Referer: http://localhost:8080/stylesheet.css
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: ko-KR,ko;q=0.8,en-US;q=0.6,en;q=0.4
+Cookie: s_nr=1461824431611; s_cc=true; gpw_e24=no%20value; s_sq=%5B%5BB%5D%5D
+
+HTTP/1.1 404 Not Found
+Connection: close
+
+
+1. 서버소켓 오픈 (따로 kill포트는 만들지 않았다.)
+2. accept를 기달리는 멀티쓰래드 생성
+3. \r\n 2개까지 파싱 (10, 13)
+4. GET으로 시작하는 프로토콜 분석 (심플한 웹서버는 GET만 지원한다. ㅋㅋ)
+5. 파일이 있는지 확인, 파일이 있으면 정상해더를 작성하고 파일내용을 리스판스한다.
+6. 파일이 없으면 오류해더를 작성해서 보낸다.
+
+
+
+GET /main.html HTTP/1.1
+Host: localhost:8080
+Connection: keep-alive
+sec-ch-ua: "Not/A)Brand";v="8", "Chromium";v="126", "Google Chrome";v="126"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: _ga=GA1.1.663582141.1714368990; _ga_JEECVK8V3S=GS1.1.1714374052.2.0.1714374052.60.0.0
+
+fileName>/main.html
+Response Header>
+HTTP/1.1 200 OK
+Content-Length: 291
+Connection: close
+Content-Type: text/html
+
+
+GET /img/jeon.webp HTTP/1.1
+Host: localhost:8080
+Connection: keep-alive
+sec-ch-ua: "Not/A)Brand";v="8", "Chromium";v="126", "Google Chrome";v="126"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: http://localhost:8080/main.html
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: _ga=GA1.1.663582141.1714368990; _ga_JEECVK8V3S=GS1.1.1714374052.2.0.1714374052.60.0.0
+
+fileName>/img/jeon.webp
+Response Header>
+HTTP/1.1 200 OK
+Content-Length: 27480
+Connection: close
+Content-Type: application/octet-stream
+
+
+Client Accept>
+GET /img/run1.webp HTTP/1.1
+Host: localhost:8080
+Connection: keep-alive
+sec-ch-ua: "Not/A)Brand";v="8", "Chromium";v="126", "Google Chrome";v="126"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: http://localhost:8080/main.html
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: _ga=GA1.1.663582141.1714368990; _ga_JEECVK8V3S=GS1.1.1714374052.2.0.1714374052.60.0.0
+
+fileName>/img/run1.webp
+Response Header>
+HTTP/1.1 200 OK
+Content-Length: 33972
+Connection: close
+Content-Type: application/octet-stream
+
+
+Client Accept>
+GET /favicon.ico HTTP/1.1
+Host: localhost:8080
+Connection: keep-alive
+sec-ch-ua: "Not/A)Brand";v="8", "Chromium";v="126", "Google Chrome";v="126"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: http://localhost:8080/main.html
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: _ga=GA1.1.663582141.1714368990; _ga_JEECVK8V3S=GS1.1.1714374052.2.0.1714374052.60.0.0
+
+fileName>/favicon.ico
+Not 200>HTTP/1.1 404 Not Found
+Connection: close

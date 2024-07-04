@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <comment>MimeType</comment>
+    <entry key="gif">image/gif</entry>
+    <entry key="bmp">image/bmp</entry>
+    <entry key="ief">image/ief</entry>
+    <entry key="jpg">image/jpeg</entry>
+    <entry key="jpeg">image/jpeg</entry>
+    <entry key="jpe">image/jpeg</entry>
+    <entry key="psd">image/photoshop</entry>
+    <entry key="png">image/png</entry>
+    <entry key="tif">image/tiff</entry>
+    <entry key="tiff">image/tiff</entry>
+    <entry key="djvu">image/vnd.djvu</entry>
+    <entry key="djv">image/vnd.djvu</entry>
+    <entry key="wbmp">image/vnd.wap.wbmp</entry>
+    <entry key="xcf">image/xcf</entry>
+    <entry key="webp">image/webp</entry>
+    <entry key="ras">image/x-cmu-raster</entry>
+    <entry key="pnm">image/x-portable-anymap</entry>
+    <entry key="pbm">image/x-portable-bitmap</entry>
+    <entry key="pgm">image/x-portable-graymap</entry>
+    <entry key="ppm">image/x-portable-pixmap</entry>
+    <entry key="rgb">image/x-rgb</entry>
+    <entry key="xbm">image/x-xbitmap</entry>
+    <entry key="xwd">image/x-xpixmap</entry>
+    <entry key="css">text/css</entry>
+    <entry key="asc">text/plain</entry>
+    <entry key="text">text/plain</entry>
+    <entry key="xml">text/xml</entry>
+    <entry key="html">text/html</entry>
+    <entry key="htm">text/html</entry>
+    <entry key="js">application/x-javascript</entry>
+    <entry key="pdf">application/pdf</entry>
+</properties>

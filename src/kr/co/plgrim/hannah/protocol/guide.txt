@@ -1,0 +1,22 @@
+1. SimpleWebServer 만들기
+- 로컬 html을 localhost8080으로 띄우면 됨
+
+2. port : 8080
+
+3. directory : c://server 아래 만들기
+
+4. 오류가 났을 시
+1) 파일이 없으면 : 404 (NOT FOUND FILE)
+2) 그 외 오류 : 400 (BAD REQUEST) 또는 500
+
+5. 프로토콜 넘어오고 나서 NewLine(\r\n) 2개 파싱해서 파싱 종료 시킴 (10,13) 임
+\r\n
+\r\n
+파싱 종료
+
+6. 소켓을 열면 inputstream에서 한글자씩 처리함
+
+HTTP/1.1 200 OK
+Content-Length: 11611 //내가 구해서 넣는 부분
+Connection: close
+Content-Type: text/css // utils 에서 찾으면됨
